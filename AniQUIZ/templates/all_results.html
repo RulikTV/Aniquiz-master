@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}QUIZ-result{% endblock title %}
+
+{% block content %}
+<div class="btn_back_home">
+    <a href="{% url 'home' %}">Главная</a>
+</div>
+
+<div class="quizs_block_all quiz_result_all">
+    {% for quiz, rating in ModelAndRating.pairs %}
+    {% for i in quiz %}
+    <div class="quiz_block_someone cards">
+        <div class="card">
+            <a href="{% url 'result' i.pk %}"><img src="/{{i.imageScreensaver}} " alt="" width="382"></a>
+            <div class="block_card_info">
+                <a href="#" class="author">
+                    <span class="avatar" style="background: url(/{{i.user.icon}}) round;"></span>
+                    <p>{{i.user}}</p>
+                </a>
+            </div>
+            <h3>
+                <a href="{% url 'result' i.pk %}">{{i.title}}</a>
+            </h3>
+            <p class="discription_card">{{i.description}}</p>
+            <div class="info_about_card">
+                <div class="card_rating">
+                    <span></span>
+                    <div>{{rating}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

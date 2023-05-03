@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}AniQUIZ-Home{% endblock title %}
+{% block content %}
+{% load static %}
+    {% for quiz in quiz %}
+        <div class="quiz_container" id="quiz_container">
+            <div class="btn_back_home">
+                <a href="{% url 'home' %}">Главная</a>
+            </div>
+            <input id="quiz_pk" hidden value="{{ quiz.pk }}">
+            <div class="card">
+                <a href="#"><img src="/{{ quiz.imageScreensaver }}" alt="" width="500"></a>
+                <div class="block_card_info">
+                    <a href="#" class="author">
+                        <span class="avatar" style="background: url(/{{quiz.user.icon}}) round;"></span>
+                        <p>{{quiz.user.username}}</p>
+                    </a>
+                </div>
+                <h3>
+                    {{quiz.title}}
+                </h3>
+                <p class="discription_card">{{quiz.description}}</p>
+                <div class="info_about_card">
+                    <div class="card_rating">
+                        <span></span>
+                        <div>{{result}}</div>
+                    </div>
+                </div>
+                <div class="start">
+                    <button type="button" class="start_quiz" id="start_quiz_btn">Начать</button>
+                </div>
+                {% if user.is_superuser or user == quiz.user %}
+                    <div class="delete">
+                        <a href="{% url 'delete_quiz' quiz.pk %}" type="button" class="delete_quiz" id="delete_quiz_btn">Удалить</a>
+                    </div>
+                {% endif %}
+<!--                {% if user == quiz.user %}-->
+<!--                    <div class="edit">-->
+<!--                        <a href="{% url 'add_quiz_n' quiz.pk %}" type="button" class="edit_quiz" id="edite_quiz_btn">Изменить вопросы</a>-->
+<!--                    </div>-->
+<!--                {% endif %}-->
+            </div>
+        </div>
+        <div class="test">
+        </div>
+        <div class="quiz_container_with_questions">
+            <div class="question_name" id="question_text">
+                Cопроводительный текст для вопроса
+            </div>
+            <img src="{% static 'img/quizs_img/questions_img/maxresdefault_6AzxeVc.jpg' %}" alt="" width="100%" id="question_image">
+            <div class="answers_box" id="answers_box_ans">
+
+            </div>
+            <div class="next">
+                <button id="next" class="next_question">Ответить</button>
+                <input type="text" id="is_admin" hidden value="{% if user.is_superuser %}True{% else %}False{% endif %}">
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}

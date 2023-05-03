@@ -1,0 +1,224 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+body {
+
+}
+
+.popular_container {
+    overflow: hidden;
+}
+.main_container {
+    padding: 0 30px;
+    margin-top: 30px;
+}
+.popular_tests p, .discription_card {
+    color: #dfdfdf;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.popular_header {
+    justify-content: space-between;
+    display: flex;
+}
+.second_block {
+    padding-top: 20px;
+    vertical-align: middle;
+}
+.second_block a {
+    padding: 13px 18px;
+    display: block;
+    text-align: center;
+    background-color: #263238;
+    border-radius: 10px;
+    border: 2px solid #263238;
+}
+.second_block a:hover {
+    border: 2px solid #d4ef25;
+}
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+
+    transition: 0.5s;
+}
+.cards .card {
+    width: 382px;
+    background-color: #263238;
+    border-radius: 10px;
+    border: 1px solid #263238;
+    margin-right: 20px;
+}
+.cards .card img {
+    border-radius: 10px 10px 0 0;
+    max-height: 270px;
+}
+.block_card_info {
+    display: flex;
+}
+.author {
+    border-radius: 18px;
+    height: 30px;
+    padding: 10 0 40 0;
+    background-color: #3A454B;
+    margin-top: -23px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding: 3px 15px 3px 40px;
+}
+.author .avatar {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url(../img/user_icons/lufi.jpeg) round;
+
+    margin-top: 0px;
+    margin-left: -35px;
+
+}
+.author p {
+    margin: -30px 0 0 0;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+}
+.card h3 {
+    margin: 0 20px;
+    font-size: 18px;
+    width: 330px;
+    padding-bottom: 15px;
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+}
+p.discription_card {
+    color: #8c8c8c;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.info_about_card {
+    margin: 0 20px;
+    border-top: 1px solid #3A454B
+}
+.card:hover {
+    border: 1px solid #d4ef25;
+}
+.card_rating {
+    display: flex;
+    margin: 5px 0;
+    color: white;
+}
+.card_rating span {
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+    background-image: url(../img/interactive_icons/free-icon-flash-lightning-bolt-14963.png);
+}
+
+
+
+
+.quiz_container_with_questions {
+    width: 80%;
+}
+.answer {
+    display: flex;
+}
+label.correct {
+    color: green;
+}
+label.NoneCorrect {
+    color: red;
+}
+form.mark {
+    width: 500px;
+    margin: 0 auto 40px auto;
+}
+form.mark label {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.rating-area {
+	overflow: hidden;
+	width: 210px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+.bntRating {
+    color: #d4ef25;
+    height: 20px;
+    width: 80px;
+    background-color: #263238;
+    border: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.bntRating:hover {
+    background-color: #263238af;
+}
+.bntRatingContainer {
+    width: 80px;
+    margin: 15px auto 0 auto;
+}
+
+#nextSlide {
+    color: #d4ef25;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    height: 414px;
+    width: 40px;
+    top: 212px;
+    right: 0;
+    background-color: #182227;
+
+    font-size: 60px;
+
+    user-select: none;
+
+    border-radius: 15px 0 0 15px;
+}

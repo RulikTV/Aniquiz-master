@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}QUIZ-add-answer{% endblock title %}
+
+{% block content %}
+
+    <div class="quiz_add_container">
+        <form method="POST" class="answers" name="answerForm">
+            {% csrf_token %}
+            <div class="answer_add" id="answer_add_box">
+                <div class="ans">
+                    <label for="answer1">Напишите ответ 1</label>
+                    <label for="correct_answer_1" class="is_correct">ответ верный</label>
+                    <input type="radio" id="correct_answer_1" name='correct' value="answer1">
+                    <input class="label_ans" id="answer1" type="text" name="answer1">
+                </div>
+
+                <div class="ans">
+                    <label for="answer2">Напишите ответ 2</label>
+                    <label for="correct_answer_2" class="is_correct">ответ верный</label>
+                    <input id="correct_answer_2" type="radio" name='correct' value="answer2">
+                    <input class="label_ans" id="answer2" type="text" name="answer2">
+                </div>
+            </div>
+            <button id="btn_save" type="submit">сохранить</button>
+
+        </form>
+        {% if errors %}
+            <p>{{errors}}</p>
+        {% endif %}
+        <button id="btn_add_answer" class="button btn_add_answer">Добавить ответ</button>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'js/add_quiz.js' %}"></script>
+{% endblock script %}
