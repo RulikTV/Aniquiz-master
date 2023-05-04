@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 from django.conf import settings
-from picklefield.fields import PickledObjectField
 
 class cateory(models.Model):
     name = models.CharField(max_length=32, primary_key=True)
